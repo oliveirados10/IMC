@@ -1,32 +1,30 @@
-import express from 'express'
-import bodyParser from 'body-parser'
-import {imcsRouter} from './routes/imcs.route.js'
+import express from 'express';
+import { userRouter } from './routes/user_route.js';
 
 export class Server {
     constructor(port) {
-        this.app = express()
+        this.app = express();
 
-        this.setMiddlewares()
+        this.setMiddlewares();
 
-        this.setRoutes()
+        this.setRoutes();
 
-        this.listen(port)
+        this.listen(port);
     }
 
     setMiddlewares() {
-        this.app.use(bodyParser.urlencoded({extended:true}))
-        this.app.use(bodyParser.json())
+        this.app.use(express.urlencoded({ extended: false }));
+        this.app.use(express.json());
     }
 
     setRoutes() {
-        this.app.use(express.static('public'))
-        this.app.use('/api/imc', imcsRouter)
+        this.app.use(express.static('public'));
+        this.app.use('/api', userRouter);
     }
 
-
     listen(port) {
-        this.app.listen(port, ()=>{
-            console.log("App started. Listen at port" + port)
-        })
+        this.app.listen(port, () => {
+            console.log("app started. Listen at port " + port);
+        });
     }
 }

@@ -4,110 +4,30 @@
     box-sizing: border-box;
 }
 
-body {
+
+.navbar{
+    background-color: #f1d9b2;
+}
+
+
+
+.ul-content{
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 32px;
-    font-family: Arial, Helvetica, sans-serif;
+    justify-content: space-between;
     align-items: center;
-    background-color: #212121; 
-    color: #333;
+    gap: 1rem;
+    list-style: none;
+    border: none;
+    
 }
 
-h1 {
-    margin-bottom: 32px;
-    background-image: linear-gradient(to right, #00b0ff, #7eff9d, #a86bff); 
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+img{
+    opacity: 0.7;
+    height: 100vh;
     width: 100%;
-    font-weight: bold;
-    text-align: center;
 }
 
-.add-imc {
-    position: relative;
-    background-color: #2e2e2e;
-    padding: 12px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 400px;
-    width: 100%;
-    margin-bottom: 32px;
-}
-
-.add-imc input {
-    background: #fff;
-    border: none;
-    outline: none;
-    color: #333;
-    padding: 8px;
-    border-radius: 4px;
-}
-
-.add-imc button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background-color: #151515;
-    padding: 12px;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-}
-
-.add-imc button:hover {
-    background-color: rgba(114, 243, 157, 0.644);
-}
-
-.imclist {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 500px; 
-    position: relative; 
-}
-
-.imclist p {
-    background-color: #212121;
-    color: white;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    position: relative; 
-    cursor: pointer;
-}
-
-.imclist button {
-    position: absolute; 
-    top: 50%; 
-    right: 10px; 
-    transform: translateY(-50%);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.imclist p span {
-    font-weight: bold;
-}
-
-.imclist p:hover {
-    background-color: rgba(156, 156, 156, 0.384);
-}
-
-.imclist button {
-    display: inline;
-    margin-left: 100px;
-    border: none;
-    background-color: transparent;
-}
-
+/* 
 @media screen and (max-width: 768px) {
     .add-imc,
     .imclist {
@@ -117,4 +37,4 @@ h1 {
     h1 {
         font-size: 24px;
     }
-}
+} */

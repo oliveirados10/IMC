@@ -1,29 +1,29 @@
-const app = angular.module('imc-page', []);
+const app = angular.module('ecommerce-page', []);
 
-app.controller('ImcApp', function ($scope, $http) {
-    $scope.ImcName = "";
-    $scope.ImcPeso = "";
-    $scope.ImcAltura = "";
+app.controller('Ecommerce', function ($scope, $http) {
+    $scope.EcommcerceProduto = "";
+    $scope.EcommcercePreco = "";
+    $scope.EcommcerceQuantidade = "";
     $scope.data = [];
 
-    $scope.calculateIMC = function (p, a) {
-        if (p && a) {
-            const peso = parseFloat(p);
-            const altura = parseFloat(a);
-            const imc = peso / (altura * altura);
-            return imc;
+    $scope.calculateProdutos = function (p, q) {
+        if (p && p) {
+            const produto = parseFloat(p);
+            const quantidade = parseFloat(q);
+            const soma = produto + quantidade ;
+            return soma;
         } else {
-            return "Preencha o peso e a altura";
+            return "Escolha um produto válido";
         }
     };
 
     $scope.submit = () => {
-        const imcResult = $scope.calculateIMC($scope.ImcPeso, $scope.ImcAltura);
+        const ecommerceResult = $scope.calculateProdutos($scope.ecommerceProduto, $scope.ecommerceQuantidade);
 
-        if (typeof imcResult === 'number') {
+        if (typeof ecommerceResult === 'number') {
             $http.post("http://localhost:3333/api/imc", {
                     name: $scope.ImcName,
-                    value: imcResult
+                    value: ecommerceResult
                 })
                 .then((res) => {
                     console.log(res)

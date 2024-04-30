@@ -13,9 +13,13 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model  imc {
+model User {
   id  Int @id @default(autoincrement())
-  name  String
-  value  Float
-  dateValue  DateTime @default(now())
+  firstname  String
+  lastname String
+  email  String
+  password String
+  role String @default ("user")
 }
+
+
