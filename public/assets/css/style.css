@@ -1,122 +1,120 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     padding: 32px;
     font-family: Arial, Helvetica, sans-serif;
     align-items: center;
-    background-color: #181717;
-    color: white;
+    background-color: #212121; 
+    color: #333;
 }
 
-
-h1{
+h1 {
     margin-bottom: 32px;
-    background-image: linear-gradient(to right, #ff42b3, #59e3ff);
+    background-image: linear-gradient(to right, #00b0ff, #7eff9d, #a86bff); 
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    width: 150px;
+    width: 100%;
     font-weight: bold;
-
+    text-align: center;
 }
 
-
-.add-task {
+.add-imc {
     position: relative;
     background-color: #2e2e2e;
-    padding: 4px 4px 4px 16px;
-    border-radius:8px;
+    padding: 12px;
+    border-radius: 8px;
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 400px;
     width: 100%;
-    max-width: 300px;
-
-
+    margin-bottom: 32px;
 }
 
- 
-.add-task input {
-    flex: 1;
-    background: none;
+.add-imc input {
+    background: #fff;
     border: none;
     outline: none;
-    color: #fff;
+    color: #333;
+    padding: 8px;
+    border-radius: 4px;
 }
 
-
-.add-task button{
+.add-imc button {
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: #151515;
-    padding: 8px 16px;
+    padding: 12px;
     border-radius: 4px;
     border: none;
     cursor: pointer;
 }
 
+.add-imc button:hover {
+    background-color: rgba(114, 243, 157, 0.644);
+}
 
-.task-list{
-    margin-top: 32px;
+.imclist {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 300px;
-    gap: 4px;
+    max-width: 500px; 
+    position: relative; 
 }
 
-.task{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 8px;
+.imclist p {
+    background-color: #212121;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
     border-radius: 8px;
-    transition: 0.3s;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-.task:hover{
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-
-.task p{
-    flex: 1;
-}
-
-.task button {
-    background: none;
-    border: none;
-    color: red;
+    margin-bottom: 16px;
+    position: relative; 
     cursor: pointer;
 }
 
-
-.no-tasks.active{
-    display: block;
+.imclist button {
+    position: absolute; 
+    top: 50%; 
+    right: 10px; 
+    transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
-
-.no-tasks {
-    font-size: 14px;
-    text-align: center;
-    opacity: 0.5;
-    display: none;
-    padding: 8px;
-    margin: 8px;
+.imclist p span {
+    font-weight: bold;
 }
 
+.imclist p:hover {
+    background-color: rgba(156, 156, 156, 0.384);
+}
 
+.imclist button {
+    display: inline;
+    margin-left: 100px;
+    border: none;
+    background-color: transparent;
+}
 
+@media screen and (max-width: 768px) {
+    .add-imc,
+    .imclist {
+        max-width: 90%; 
+    }
 
-
+    h1 {
+        font-size: 24px;
+    }
+}

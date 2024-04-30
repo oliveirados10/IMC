@@ -13,8 +13,9 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Task {
+model  imc {
   id  Int @id @default(autoincrement())
   name  String
-  checked  Boolean
+  value  Float
+  dateValue  DateTime @default(now())
 }
