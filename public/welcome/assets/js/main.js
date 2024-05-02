@@ -21,28 +21,28 @@ app.controller('Ecommerce', function ($scope, $http) {
         const ecommerceResult = $scope.calculateProdutos($scope.ecommerceProduto, $scope.ecommerceQuantidade);
 
         if (typeof ecommerceResult === 'number') {
-            $http.post("http://localhost:3333/api/imc", {
-                    name: $scope.ImcName,
+            $http.post("http://localhost:3333/api/ecommerce", {
+                    name: $scope.EcommerceName,
                     value: ecommerceResult
                 })
                 .then((res) => {
                     console.log(res)
-                    $scope.ImcName = "";
-                    $scope.ImcPeso = "";
-                    $scope.ImcAltura = "";
-                    $scope.getAllimc()
+                    $scope.EcommerceName = "";
+                    $scope.EcommercePassword = "";
+                    $scope.EcommerceEmail = "";
+                    $scope.getAllecommerce()
                 })
                 .catch((error) => {
                     console.error("Error:", error);
                     alert("An error occurred. Please try again later.");
                 });
         } else {
-            alert(imcResult);
+            alert(ecommerceResult);
         }
     };
 
-    $scope.getAllimc = () => {
-        $http.get("http://localhost:3333/api/imc", {})
+    $scope.getAllecommerce = () => {
+        $http.get("http://localhost:3333/api/ecommerce", {})
             .then((res) => {
                 console.log(res)
                 $scope.data = res.data;
@@ -53,11 +53,11 @@ app.controller('Ecommerce', function ($scope, $http) {
             });
     }
 
-    $scope.imcDelete = (id)  => {
-        $http.delete(`http://localhost:3333/api/imc/${id}`)
+    $scope.ecommerceDelete = (id)  => {
+        $http.delete(`http://localhost:3333/api/ecommerce/${id}`)
             .then((res) => {
                 console.log("Item excluído com sucesso:", res);
-                $scope.getAllimc(); 
+                $scope.getAllecommerce(); 
             })
             .catch((error) => {
                 console.error("Erro ao excluir item:", error);
@@ -65,5 +65,5 @@ app.controller('Ecommerce', function ($scope, $http) {
             });
     };
 
-    $scope.getAllimc();
+    $scope.getAllecommerce();
 });

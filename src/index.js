@@ -1,3 +1,4 @@
-import {Server} from './Server.js'
+import { Server } from "./infra/server/ServerConfigurations.js";
 
-new Server(3333)
+
+new Server(3333);

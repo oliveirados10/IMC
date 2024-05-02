@@ -1,7 +1,11 @@
 import express from 'express';
-import { userRouter } from './routes/user_route.js';
+import cors from 'cors';
+import { userRouter } from '../../routes/user.route.js';
+import { productRouter } from '../../routes/product.route.js';
+import { authenticateUser } from '../middleware/authMiddleware.js';
 
 export class Server {
+    route = "/api/v1"
     constructor(port) {
         this.app = express();
 
@@ -15,11 +19,14 @@ export class Server {
     setMiddlewares() {
         this.app.use(express.urlencoded({ extended: false }));
         this.app.use(express.json());
+        this.app.use(cors({ origin: '*' }))
     }
 
     setRoutes() {
         this.app.use(express.static('public'));
-        this.app.use('/api', userRouter);
+        this.app.use("/home", authenticateUser, express.static('/home'));
+        this.app.use(this.route, userRouter);
+        this.app.use(`${this.route}/product`, authenticateUser, productRouter);
     }
 
     listen(port) {

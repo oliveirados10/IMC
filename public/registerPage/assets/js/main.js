@@ -7,7 +7,7 @@ app.controller('registerController', function ($scope, $http) {
     $scope.password = "";
 
     $scope.submit = () => {
-        $http.post("http://localhost:3333/api/register", {
+        $http.post("http://localhost:3333/api/v1/register", {
             firstname: $scope.firstname,
             lastname: $scope.lastname,
             password: $scope.password,

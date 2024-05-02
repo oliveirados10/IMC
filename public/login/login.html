@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" ng-app="register-page">
+<html lang="pt-BR" ng-app="login">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,7 @@
     <title>Login</title>
 </head>
 
-<body ng-controller="registerController">
+<body ng-controller="loginController">
     <div class="wrapper">
         <nav class="nav">
             <div class="nav-logo" id="navMenu">
@@ -24,7 +24,7 @@
             </div>
         </nav>
 
-        <form class="form-box" action="../index.html">
+        <form class="form-box">
 
             <div class="login-container" id="login">
                 <div class="top">
@@ -40,7 +40,7 @@
                     <i class="bx bx-lock-alt"></i>
                 </div>
                 <div class="input-box">
-                    <input type="submit" class="submit" value="Login">
+                    <input type="submit" ng-click = "submit()" class="submit" value="Login">
                 </div>
                 <div class="two-col">
                     <div class="one">
@@ -51,9 +51,13 @@
             </div>
             
 
-
         </form>
     </div>
+    
+<script src = "./main.js"></script>
+
 </body>
 
 </html>
+
+
