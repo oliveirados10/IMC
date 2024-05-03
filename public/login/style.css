@@ -104,7 +104,6 @@ body {
     position: relative;
     justify-content: center;
     display: flex;
-    align-items: center;
     width: 512px;
     height: 420px;
     overflow: none;

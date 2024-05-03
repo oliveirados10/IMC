@@ -17,7 +17,7 @@ app.controller('loginController', function ($scope, $http) {
             })
             .catch((error) => {
                 console.error("Error:", error);
-                alert("An error occurred. Please try again later.");
+                alert("Um erro ocorreu. Por favor, tente novamente mais tarde");
             });
     };
 });
