@@ -13,6 +13,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    overflow-y: hidden; 
 }
 
 .wrapper {
@@ -101,13 +102,12 @@ body {
 
 .form-box {
     position: relative;
-    justify-content: flex;
+    justify-content: center;
     display: flex;
     align-items: center;
     width: 512px;
     height: 420px;
-    overflow: hidden;
-    z-index: 2;
+    overflow: none;
 }
 
 .register-container {
@@ -182,7 +182,7 @@ header {
     outline: none;
     background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .submit:hover {
@@ -213,7 +213,7 @@ header {
 .two label a:hover{
     text-decoration: underline;
 } 
-
+/* 
 @media only screen and (max-width: 786px) {
     .nav-menu {
         display: none;
@@ -315,4 +315,4 @@ a:hover {
     .nav-menu ul li .link {
         padding: 10px 0;
     }
-}
+} */

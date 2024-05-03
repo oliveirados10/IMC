@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.corpo{
+    background-image: url("./background_image.jpg");
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+
+h1{
+    position:relative;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    padding: 20px;
+    margin: 30px;
+
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .container {
+    background-color: rgba(194, 194, 194, 0.589);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .item {
+    background-color: whitesmoke;
+    width: 250px;
+    border: 3px solid #f1eef152;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .item:hover:hover {
+    background-color: #7c7b7b65;
+}
+  
+  .item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .item h2 {
+    margin-top: 10px;
+  }
+  
+  .price {
+    font-weight: bold;
+    color: #008000;
+  }
+
+  .cart-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.cart-link img {
+    width: 50px; /* Tamanho do ícone */
+    height: auto;
+    cursor: pointer;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.item {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.item h2 {
+    margin-top: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #008000; 
+}
+
+.icon{
+    display: flex;
+    justify-content: end;
+    margin-right: 30px;
+}
+  
+.comprar{
+    background-color: #33333300;
+    border: none;
+}
