@@ -9,12 +9,11 @@ export class ProductRepository {
         return await this.prisma.product.findMany();
     }
 
-    async saveProduct({ firstname, lastname, description, price, imageUrl }) {
-        console.log(firstname, lastname, description, price, imageUrl);
+    async saveProduct({ name, description, price, imageUrl }) {
+        console.log(name, description, price, imageUrl);
         return await this.prisma.product.create({
             data: {
-                firstname,
-                lastname,
+                name,
                 description,
                 price,
                 imageUrl,
@@ -23,9 +22,42 @@ export class ProductRepository {
     }
 
     async deleteProduct(id) {
-        return await this.prisma.product.delete({
+        try {
+            const cartItems = await this.prisma.cartItem.findMany({
+                where: {
+                    productId: parseInt(id),
+                },
+            });
+    
+            await Promise.all(
+                cartItems.map(async (cartItem) => {
+                    await this.prisma.cartItem.delete({
+                        where: {
+                            id: cartItem.id,
+                        },
+                    });
+                })
+            );
+    
+            return await this.prisma.product.delete({
+                where: {
+                    id: parseInt(id),
+                },
+            });
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+    
+
+    async updateProduct(id, product) {
+        return await this.prisma.product.update({
             where: {
                 id: parseInt(id),
+            },
+            data: {
+                ...product,
             },
         });
     }

@@ -10,7 +10,7 @@ export class UserService {
         console.log(verifyUser);
         const existingUser = verifyUser.find((element) => {
             console.log(element);
-            return element.email === user.email;
+            return element.email === user.email
         });
 
         return !existingUser;

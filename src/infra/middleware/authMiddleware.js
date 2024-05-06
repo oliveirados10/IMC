@@ -1,5 +1,3 @@
-// middleware/authMiddleware.js
-
 import { verifyToken } from "../../service/token.service.js";
 
 export const authenticateUser = (req, res, next) => {

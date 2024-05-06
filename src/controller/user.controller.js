@@ -30,7 +30,6 @@ export class UserController {
             if (!user) {
                 return res.status(404).json({ error: "User not found" });
             }
-
             return res.status(200).json(user);
         } catch (error) {
             console.error(error);
@@ -40,9 +39,8 @@ export class UserController {
 
 
     registerUser = async (req, res) => {
-        try { 
+        try {
             const user = req.body;
-            console.log(user)
             const isValid = await this.service.validarUser(user)
             if (isValid) {
                 const newUser = await this.repository.registerUser(user);
@@ -57,8 +55,8 @@ export class UserController {
     }
 
     loginUser = async (req, res) => {
-        const user = req.body;
         try {
+            const user = req.body;
             const data = await this.repository.loginUser(user);
             return res.status(200).json({ token: data.token, user: data.user, message: "User logged in" });
         } catch (error) {
@@ -68,8 +66,8 @@ export class UserController {
     }
 
     deleteUser = async (req, res) => {
-        const id = parseInt(req.params.id);
         try {
+            const id = parseInt(req.params.id);
             await this.repository.deleteUser(id);
             return res.status(204).send();
         } catch (error) {
