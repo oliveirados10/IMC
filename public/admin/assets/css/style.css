@@ -166,6 +166,13 @@ header {
     color: white;
 }
 
+.nav{
+    background-color: rgba(0, 183, 255, 0);
+    border:none;
+    display: flex;
+    justify-content: end;
+}
+
 
 .deletar:hover{
     background-color: rgba(255, 0, 0, 0.466);
@@ -186,12 +193,19 @@ header {
     padding: 10px 20px;
     padding: 10px;
     margin: 5px;
+
 }
 
 .add:hover{
     background-color: #dad6037c;
     border-radius: 20px;
     color: black;
+}
+
+.add-itens{
+    margin: -10px;
+    padding: 3px;
+    margin-right: -5px;
 }
 
 .icon{
